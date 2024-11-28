@@ -1,3 +1,28 @@
+# Added Comments From Fork (nataliems)
+
+To run:
+- cd to git repository
+- docker build --no-cache -t <name> .
+- docker run -it -p 8888:8888 -v $(pwd):/workspace <name>
+- open the link in the command prompt to enter JupyterLab IDE
+
+To reinstall the edited codebase: 
+- pip install -e .
+
+To set up from scratch:
+- Requirements: Linux machine, git clone onto local machine from this repository, and acquire HuggingFace account and access token
+- cd to git repository
+- pip install -U "huggingface_hub[cli]"
+- huggingface-cli login
+- huggingface-cli download neuralmagic/Meta-Llama-3-70B-Instruct-quantized.w8a16 --cache-dir .
+
+Still to do:
+- Switch to CUDA usability, and work on latency for make_graph_from_text
+- Set up notebook that runs key aspects of interest in existing codebase: x2 from graph_generation, graph_tools, graph_analysis
+- Fix all scripts specifically for prompting or models, and update my personally forked Github repository (e.g. remove any biology-focused prompts or models)
+- Figure out how to cache / load existing graphs and then add onto it (git?)
+- Move to a Flask app, only if I want to...
+
 # GraphReasoning: Scientific Discovery through Knowledge Extraction and Multimodal Graph-based Representation and Reasoning
 
 Markus J. Buehler, MIT, 2024
